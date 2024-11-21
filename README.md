@@ -14,7 +14,6 @@ My personal website built with Next.js and Tailwind CSS. Uses Medium as a headle
 - 📝 Medium integration for blog posts
 - 🔖 Raindrop.io integration for bookmarks
 - 🖼️ Gravatar for profile image
-- 📱 App Store & Play Store integration
 - 🎯 Perfect Lighthouse score
 
 ## Tech Stack
@@ -25,8 +24,6 @@ My personal website built with Next.js and Tailwind CSS. Uses Medium as a headle
 - [Shadcn UI](https://ui.shadcn.com)
 - [Medium RSS](https://medium.com) (as Headless CMS)
 - [Raindrop.io](https://raindrop.io) (for Bookmarks)
-- [App Store Scraper](https://github.com/facundoolano/app-store-scraper)
-- [Google Play Scraper](https://github.com/facundoolano/google-play-scraper)
 
 ## Getting Started
 
