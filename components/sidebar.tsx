@@ -27,7 +27,7 @@ const mainLinks = [
   { href: "/journey", icon: Map, label: "Journey" },
   { href: "/tools", icon: Layers, label: "Tools" },
   { href: "/workspace", icon: Briefcase, label: "Workspace" },
-  { href: "/bookmarks", icon: Bookmark, label: "Bookmarks" },
+  // { href: "/bookmarks", icon: Bookmark, label: "Bookmarks" },
 ];
 
 const socialLinks = [

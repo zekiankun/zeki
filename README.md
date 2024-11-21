@@ -40,8 +40,10 @@ git clone https://github.com/osman-koc/my-web-site.git
 npm install
 ```
 
-3. Create a `.env.local` file in the root directory with your Raindrop.io API token:
-```
+3. Create a `.env.local` file in the root directory:
+```bash
+# Raindrop.io API Token (Required for bookmarks)
+# Get your token from: https://app.raindrop.io/settings/integrations
 RAINDROP_ACCESS_TOKEN=your_token_here
 ```
 
@@ -63,8 +65,9 @@ To customize this website for your own use, you'll need to modify the following:
 
 3. Configure Raindrop.io:
    - Create an account at [Raindrop.io](https://raindrop.io)
-   - Get your API token from settings
-   - Add it to `.env.local`
+   - Go to [Integrations](https://app.raindrop.io/settings/integrations)
+   - Create a new app and generate a permanent token
+   - Add the token to `.env.local`
 
 4. Modify the journey timeline in `app/journey/page.tsx`
 

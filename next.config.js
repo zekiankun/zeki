@@ -1,21 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   images: { 
-    unoptimized: false, // Changed from true to false for Vercel Image Optimization
+    unoptimized: true,
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'osmkoc.com',
-        pathname: '/wp-content/uploads/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'source.unsplash.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'rdl.ink',
-      },
       {
         protocol: 'https',
         hostname: 'gravatar.com',
@@ -59,6 +47,10 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'img01.huaweifile.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'source.unsplash.com',
       }
     ],
   },

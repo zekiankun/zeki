@@ -20,7 +20,10 @@ export function Pagination({
   const totalPages = Math.ceil(totalPosts / postsPerPage);
   
   function generatePageLink(page: number) {
-    const params = new URLSearchParams(searchParams);
+    const params = new URLSearchParams();
+    searchParams.forEach((value, key) => {
+      params.set(key, value);
+    });
     params.set("page", page.toString());
     return `${pathname}?${params.toString()}`;
   }
