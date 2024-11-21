@@ -1,30 +1,27 @@
-"use client";
-
 import Link from "next/link";
-import { usePathname, useSearchParams } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import type { ReadonlyURLSearchParams } from "next/navigation";
+
+export interface PaginationProps {
+  currentPage: number;
+  postsPerPage: number;
+  totalPosts: number;
+  pathname: string;
+  searchParams: ReadonlyURLSearchParams;
+}
 
 export function Pagination({
   currentPage,
   postsPerPage,
   totalPosts,
-}: {
-  currentPage: number;
-  postsPerPage: number;
-  totalPosts: number;
-}) {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  
+  pathname,
+  searchParams,
+}: PaginationProps) {
   const totalPages = Math.ceil(totalPosts / postsPerPage);
   
   function generatePageLink(page: number) {
-    const params = new URLSearchParams();
-    // Copy all existing search params
-    searchParams.forEach((value, key) => {
-      params.set(key, value);
-    });
+    const params = new URLSearchParams(searchParams.toString());
     params.set("page", page.toString());
     return `${pathname}?${params.toString()}`;
   }

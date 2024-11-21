@@ -10,16 +10,23 @@ import {
   Map, 
   Layers,
   Briefcase,
-  //Bookmark,
+  Bookmark,
   Github, 
   Twitter, 
   Linkedin,
   Menu,
   X,
   Code2,
-  LucideIcon
+  type LucideIcon,
 } from "lucide-react";
 import { useState } from "react";
+
+type SocialLink = {
+  href: string;
+  icon: LucideIcon | (() => JSX.Element);
+  label: string;
+  className: string;
+};
 
 const mainLinks = [
   { href: "/", icon: Home, label: "Home" },
@@ -28,33 +35,27 @@ const mainLinks = [
   { href: "/journey", icon: Map, label: "Journey" },
   { href: "/tools", icon: Layers, label: "Tools" },
   { href: "/workspace", icon: Briefcase, label: "Workspace" },
-  //{ href: "/bookmarks", icon: Bookmark, label: "Bookmarks" },
+  { href: "/bookmarks", icon: Bookmark, label: "Bookmarks" },
 ];
-
-type CustomIcon = () => JSX.Element;
-type IconType = LucideIcon | CustomIcon;
-
-type SocialLink = {
-  href: string;
-  icon: IconType;
-  label: string;
-};
 
 const socialLinks: SocialLink[] = [
   { 
     href: "https://github.com/osman-koc", 
     icon: Github, 
-    label: "GitHub" 
+    label: "GitHub",
+    className: "h-5 w-5" 
   },
   { 
     href: "https://twitter.com/osmkoc", 
     icon: Twitter, 
-    label: "Twitter" 
+    label: "Twitter",
+    className: "h-5 w-5"
   },
   { 
     href: "https://linkedin.com/in/osman-koc", 
     icon: Linkedin, 
-    label: "LinkedIn" 
+    label: "LinkedIn",
+    className: "h-5 w-5"
   },
   { 
     href: "https://osman-koc.medium.com", 
@@ -67,7 +68,8 @@ const socialLinks: SocialLink[] = [
         <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
       </svg>
     ),
-    label: "Medium"
+    label: "Medium",
+    className: "h-5 w-5"
   },
 ];
 
@@ -128,21 +130,19 @@ export function Sidebar() {
             </nav>
           </div>
 
-          <div className="space-y-4">
-            <div className="flex items-center space-x-4">
-              {socialLinks.map(({ href, icon: Icon, label }) => (
-                <a
-                  key={href}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {typeof Icon === 'function' && <Icon />}
-                  <span className="sr-only">{label}</span>
-                </a>
-              ))}
-            </div>
+          <div className="flex items-center space-x-4">
+            {socialLinks.map(({ href, icon: Icon, label, className }) => (
+              <a
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {<Icon className={className} />}
+                <span className="sr-only">{label}</span>
+              </a>
+            ))}
           </div>
         </div>
       </aside>

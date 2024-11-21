@@ -4,6 +4,7 @@ import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Sidebar } from '@/components/sidebar';
 import { ThemeToggle } from '@/components/theme-toggle';
+import { Suspense } from 'react';
 import { LoadingProvider } from '@/components/loading-provider';
 
 const inter = Inter({
@@ -35,9 +36,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <LoadingProvider />
+          <Suspense>
+            <LoadingProvider />
+          </Suspense>
           <div className="flex min-h-screen">
-            <Sidebar />
+            <Suspense>
+              <Sidebar />
+            </Suspense>
             <div className="flex-1 pl-0 md:pl-64">
               <div className="max-w-6xl mx-auto px-4 md:px-8 py-8">
                 <div className="flex justify-end mb-8">

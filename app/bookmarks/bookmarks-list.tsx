@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { FallbackImage } from "@/components/ui/fallback-image";
@@ -38,14 +38,9 @@ export function BookmarksList() {
     { revalidateOnFocus: false }
   );
 
-  const [selectedCollection, setSelectedCollection] = useState<Collection | null>(null);
-
-  useEffect(() => {
-    if (collections.length > 0) {
-      const defaultCollection = collections.find(c => c._id === DEFAULT_COLLECTION_ID) || collections[0];
-      setSelectedCollection(defaultCollection);
-    }
-  }, [collections]);
+  const [selectedCollection, setSelectedCollection] = useState<Collection | null>(
+    collections.find(c => c._id === DEFAULT_COLLECTION_ID) || collections[0] || null
+  );
 
   const { data: bookmarks = [], isLoading: isLoadingBookmarks } = useSWR<Bookmark[]>(
     selectedCollection ? `/api/bookmarks/items/${selectedCollection._id}` : null,

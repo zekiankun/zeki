@@ -1,9 +1,8 @@
 import { Suspense } from 'react';
-import { getMediumPosts } from '@/lib/medium';
 import { PostGrid } from '@/components/post-grid';
-import { Pagination } from '@/components/pagination';
-
-export const revalidate = 3600;
+import { getMediumPosts } from '@/lib/medium';
+import { PostGridSkeleton } from '@/components/post-grid-skeleton';
+import { ClientPagination } from '@/components/client-pagination';
 
 export default async function BlogPage({
   searchParams,
@@ -21,29 +20,12 @@ export default async function BlogPage({
       
       <Suspense fallback={<PostGridSkeleton />}>
         <PostGrid posts={posts} />
+        <ClientPagination 
+          currentPage={currentPage}
+          postsPerPage={postsPerPage}
+          totalPosts={total}
+        />
       </Suspense>
-      
-      <Pagination 
-        currentPage={currentPage}
-        postsPerPage={postsPerPage}
-        totalPosts={total}
-      />
-    </div>
-  );
-}
-
-function PostGridSkeleton() {
-  return (
-    <div className="grid gap-8 md:grid-cols-2">
-      {Array.from({ length: 10 }).map((_, i) => (
-        <div key={i} className="space-y-4">
-          <div className="aspect-video bg-muted rounded-lg animate-pulse" />
-          <div className="space-y-2">
-            <div className="h-6 bg-muted rounded animate-pulse" />
-            <div className="h-4 bg-muted rounded w-2/3 animate-pulse" />
-          </div>
-        </div>
-      ))}
     </div>
   );
 }
