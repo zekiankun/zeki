@@ -1,8 +1,7 @@
 import { formatDistance } from "date-fns";
 import { ExternalLink } from "lucide-react";
 import { FallbackImage } from "@/components/ui/fallback-image";
-
-// ... types remain the same ...
+import { type Post } from "@/types/post";
 
 export function PostGrid({ posts }: { posts: Post[] }) {
   if (!posts.length) {
