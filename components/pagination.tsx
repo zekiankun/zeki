@@ -21,6 +21,7 @@ export function Pagination({
   
   function generatePageLink(page: number) {
     const params = new URLSearchParams();
+    // Copy all existing search params
     searchParams.forEach((value, key) => {
       params.set(key, value);
     });
