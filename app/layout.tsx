@@ -18,8 +18,8 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Osman Koç',
-  description: 'Software Engineer & Writer',
+  title: 'Osman KOÇ - Software Engineer | Blog & Portfolio',
+  description: 'Profesyonel olarak web tabanlı kurumsal uygulamalar geliştirip, kişisel olarak da web ve mobilde uygulamalar, projeler geliştirmeye çalışıyorum. Google Play Store ve AppStore üzerinden yayında olan uygulamaları kullanabilirsiniz.',
 };
 
 export default function RootLayout({
