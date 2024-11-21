@@ -5,8 +5,8 @@ export const projects: Project[] = [
     title: "Personal Website",
     description: "Built with Next.js, TypeScript, and Tailwind CSS",
     image: "https://osmkoc.com/wp-content/uploads/2024/11/osmkoc_newss.jpg",
-    demoUrl: "https://osmkoc.com",
-    sourceUrl: "https://github.com/osman-koc/osmkoc.com"
+    demoUrl: "https://kocosman.com.tr",
+    sourceUrl: "https://github.com/osman-koc/my-web-site"
   },
   {
     title: "Whistle SOS",
