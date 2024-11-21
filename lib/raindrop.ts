@@ -1,6 +1,15 @@
-const RAINDROP_TOKEN = process.env.RAINDROP_ACCESS_TOKEN;
+import { cache } from 'react';
 
-type RaindropBookmark = {
+const RAINDROP_TOKEN = process.env.NEXT_PUBLIC_RAINDROP_ACCESS_TOKEN;
+const RAINDROP_API = 'https://api.raindrop.io/rest/v1';
+
+type Collection = {
+  _id: number;
+  title: string;
+  count: number;
+};
+
+type Bookmark = {
   _id: string;
   title: string;
   excerpt: string;
@@ -10,63 +19,59 @@ type RaindropBookmark = {
   created: string;
 };
 
-type Collection = {
-  _id: number;
-  title: string;
-  count: number;
-};
-
-export async function getCollections(): Promise<Collection[]> {
+export const getCollections = cache(async (): Promise<Collection[]> => {
   if (!RAINDROP_TOKEN) {
     throw new Error('Raindrop access token is not configured');
   }
 
   try {
-    const response = await fetch('https://api.raindrop.io/rest/v1/collections', {
+    const res = await fetch(`${RAINDROP_API}/collections`, {
       headers: {
-        'Authorization': `Bearer ${RAINDROP_TOKEN}`,
+        Authorization: `Bearer ${RAINDROP_TOKEN}`,
       },
       next: { revalidate: 3600 } // Cache for 1 hour
     });
-    
-    if (!response.ok) {
-      throw new Error(`Failed to fetch collections: ${response.statusText}`);
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch collections: ${res.statusText}`);
     }
 
-    const data = await response.json();
+    const data = await res.json();
     return data.items
-      .filter((item: any) => !item.hidden) // Only show visible collections
-      .map((item: any) => ({
-        _id: item._id,
-        title: item.title,
-        count: item.count
-      }));
+      .filter((collection: any) => !collection.hidden)
+      .map((collection: any) => ({
+        _id: collection._id,
+        title: collection.title,
+        count: collection.count,
+      }))
+      .sort((a: Collection, b: Collection) => a.title.localeCompare(b.title));
   } catch (error) {
     console.error('Error fetching collections:', error);
     throw error;
   }
-}
+});
 
-export async function getBookmarksByCollection(collectionId: number): Promise<RaindropBookmark[]> {
+export const getBookmarksByCollection = cache(async (collectionId: number): Promise<Bookmark[]> => {
   if (!RAINDROP_TOKEN) {
     throw new Error('Raindrop access token is not configured');
   }
 
   try {
-    const response = await fetch(
-      `https://api.raindrop.io/rest/v1/raindrops/${collectionId}?perpage=50`, {
+    const res = await fetch(
+      `${RAINDROP_API}/raindrops/${collectionId}?perpage=50&sort=-created`,
+      {
         headers: {
-          'Authorization': `Bearer ${RAINDROP_TOKEN}`,
+          Authorization: `Bearer ${RAINDROP_TOKEN}`,
         },
         next: { revalidate: 3600 } // Cache for 1 hour
       }
     );
-    
-    if (!response.ok) {
-      throw new Error(`Failed to fetch bookmarks: ${response.statusText}`);
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch bookmarks: ${res.statusText}`);
     }
 
-    const data = await response.json();
+    const data = await res.json();
     return data.items.map((item: any) => ({
       _id: item._id,
       title: item.title,
@@ -74,10 +79,10 @@ export async function getBookmarksByCollection(collectionId: number): Promise<Ra
       link: item.link,
       cover: item.cover || 'https://source.unsplash.com/random/800x600?technology',
       tags: item.tags || [],
-      created: item.created
+      created: item.created,
     }));
   } catch (error) {
     console.error('Error fetching bookmarks:', error);
     throw error;
   }
-}
+});

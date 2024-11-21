@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -17,8 +16,10 @@ import {
   Linkedin,
   Menu,
   X,
-  Code2
+  Code2,
+  LucideIcon
 } from "lucide-react";
+import { useState } from "react";
 
 const mainLinks = [
   { href: "/", icon: Home, label: "Home" },
@@ -27,13 +28,34 @@ const mainLinks = [
   { href: "/journey", icon: Map, label: "Journey" },
   { href: "/tools", icon: Layers, label: "Tools" },
   { href: "/workspace", icon: Briefcase, label: "Workspace" },
-  // { href: "/bookmarks", icon: Bookmark, label: "Bookmarks" },
+  { href: "/bookmarks", icon: Bookmark, label: "Bookmarks" },
 ];
 
-const socialLinks = [
-  { href: "https://github.com/osman-koc", icon: Github, label: "GitHub" },
-  { href: "https://twitter.com/osmkoc", icon: Twitter, label: "Twitter" },
-  { href: "https://linkedin.com/in/osman-koc", icon: Linkedin, label: "LinkedIn" },
+type CustomIcon = () => JSX.Element;
+type IconType = LucideIcon | CustomIcon;
+
+type SocialLink = {
+  href: string;
+  icon: IconType;
+  label: string;
+};
+
+const socialLinks: SocialLink[] = [
+  { 
+    href: "https://github.com/osman-koc", 
+    icon: Github, 
+    label: "GitHub" 
+  },
+  { 
+    href: "https://twitter.com/osmkoc", 
+    icon: Twitter, 
+    label: "Twitter" 
+  },
+  { 
+    href: "https://linkedin.com/in/osman-koc", 
+    icon: Linkedin, 
+    label: "LinkedIn" 
+  },
   { 
     href: "https://osman-koc.medium.com", 
     icon: () => (
@@ -107,8 +129,8 @@ export function Sidebar() {
           </div>
 
           <div className="space-y-4">
-            <div className="flex space-x-4">
-              {socialLinks.map(({ href, icon: Icon }) => (
+            <div className="flex items-center space-x-4">
+              {socialLinks.map(({ href, icon: Icon, label }) => (
                 <a
                   key={href}
                   href={href}
@@ -116,7 +138,8 @@ export function Sidebar() {
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  {typeof Icon === 'function' ? <Icon /> : <Icon className="h-5 w-5" />}
+                  {typeof Icon === 'function' && <Icon />}
+                  <span className="sr-only">{label}</span>
                 </a>
               ))}
             </div>

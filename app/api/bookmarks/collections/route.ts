@@ -2,8 +2,9 @@ import { getCollections } from '@/lib/raindrop';
 import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
+export const revalidate = 3600; // Revalidate every hour
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
     const collections = await getCollections();
     return NextResponse.json(collections);
