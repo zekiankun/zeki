@@ -2,6 +2,8 @@
 
 My personal website built with Next.js and Tailwind CSS. Uses Medium as a headless CMS for blog posts and Raindrop.io for managing bookmarks.
 
+<img src="public/screenshot.jpg" width="500" />
+
 ## Features
 
 - ⚡️ Built with Next.js 14 and TypeScript
