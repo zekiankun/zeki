@@ -7,6 +7,7 @@ import { ThemeToggle } from '@/components/theme-toggle';
 import { Suspense } from 'react';
 import { LoadingProvider } from '@/components/loading-provider';
 import { sharedMetadata } from '@/lib/shared-metadata';
+import { OkAsciiArt } from '@/components/ok-ascii-art';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -62,6 +63,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <OkAsciiArt />
           <Suspense>
             <LoadingProvider />
           </Suspense>
