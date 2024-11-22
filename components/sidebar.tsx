@@ -133,7 +133,7 @@ export function Sidebar() {
             </nav>
           </div>
 
-          <div className="fixed items-center space-x-4 bottom-0 left-0 w-full bg-background p-4 flex justify-around z-10 md:static md:flex-none">
+          <div className="flex items-center space-x-4 fixed bottom-8 left-0 w-full p-4 justify-around z-10 md:static md:flex-none">
             {socialLinks.map(({ href, icon: Icon, label, className }) => (
               <a
                 key={href}
