@@ -6,7 +6,7 @@ import { Sidebar } from '@/components/sidebar';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Suspense } from 'react';
 import { LoadingProvider } from '@/components/loading-provider';
-import { sharedMetadata } from '@/app/shared-metadata';
+import { sharedMetadata } from '@/lib/shared-metadata';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -29,22 +29,12 @@ export const metadata: Metadata = {
     template: `%s — ${sharedMetadata.title}`
   },
   description: sharedMetadata.description,
-  keywords: ['Osman Koç', 'Osman Koc', 'osmkoc', 'kocosman', 'koc osman', 'developer', 'kocosm'],
+  keywords: sharedMetadata.keywords,
   icons: {
     icon: '/favicon.ico',
     apple: '/favicon.png',
   },
-  openGraph: {
-    title: {
-      default: sharedMetadata.title,
-      template: `%s — ${sharedMetadata.title}`
-    },
-    description: sharedMetadata.description,
-    type: 'website',
-    url: sharedMetadata.openGraph.url,
-    siteName: sharedMetadata.title,
-    locale: 'en_IE'
-  },
+  openGraph: sharedMetadata.openGraph,
   alternates: {
     canonical: '/'
   },

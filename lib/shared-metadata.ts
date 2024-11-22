@@ -1,6 +1,7 @@
 export const sharedMetadata = {
     title: 'Osman Koç - Software Engineer | Portfolio & Blog',
     description: 'I develop web-based corporate applications professionally and I also work on developing web and mobile applications and projects personally. You can use the applications published on Google Play Store and AppStore.',
+    keywords: ['Osman Koç', 'Osman Koc', 'osmkoc', 'kocosman', 'koc osman', 'developer', 'kocosm', 'blog', 'personal website'],
     openGraph: {
       title: 'Osman Koç',
       description: 'Software Engineer, and writer, based in Turkey',
