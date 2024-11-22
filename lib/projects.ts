@@ -3,10 +3,17 @@ import { type Project } from "@/types/project";
 export const projects: Project[] = [
   {
     title: "Personal Website",
-    description: "Built with Next.js, TypeScript, and Tailwind CSS",
+    description: "kocosman.com.tr - Built with Next.js, TypeScript, and Tailwind CSS",
     image: "https://osmkoc.com/wp-content/uploads/2024/11/osmkoc_newss.jpg",
     demoUrl: "https://kocosman.com.tr",
     sourceUrl: "https://github.com/osman-koc/my-web-site"
+  },
+  {
+    title: "GuidGenerator - VSCode Extension",
+    description: "Generate and insert GUIDs (uuid) effortlessly into your code using a simple shortcut.",
+    image: "https://kocdev.gallerycdn.vsassets.io/extensions/kocdev/guidgenerator/0.0.6/1691729877308/Microsoft.VisualStudio.Services.Icons.Default",
+    demoUrl: "https://marketplace.visualstudio.com/items?itemName=kocdev.guidgenerator",
+    sourceUrl: "https://github.com/osman-koc/vscode-guid-generator"
   },
   {
     title: "Whistle SOS",
@@ -38,7 +45,6 @@ export const projects: Project[] = [
       }
     ]
   },
-  
   {
     title: "Baby Sleeper",
     description: "Soothing sounds and lullabies for babies",
