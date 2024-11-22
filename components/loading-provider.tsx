@@ -19,7 +19,7 @@ export function LoadingProvider() {
   return (
     <div
       className={cn(
-        "fixed top-4 right-4 z-50 flex items-center gap-2 rounded-full bg-background/50 px-3 py-1.5 text-sm text-muted-foreground backdrop-blur transition-all",
+        "fixed top-5 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 rounded-full bg-background/50 px-3 py-1.5 text-sm text-muted-foreground backdrop-blur transition-all",
         isLoading ? "opacity-100" : "opacity-0 pointer-events-none"
       )}
     >

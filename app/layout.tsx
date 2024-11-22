@@ -81,7 +81,7 @@ export default function RootLayout({
             </Suspense>
             <div className="flex-1 pl-0 md:pl-64">
               <div className="max-w-6xl mx-auto px-4 md:px-8 py-8">
-                <div className="flex justify-end mb-8">
+                <div className="flex justify-end mb-16">
                   <ThemeToggle />
                 </div>
                 <main>{children}</main>
