@@ -1,33 +1,35 @@
 "use client";
 
-import { useState } from 'react';
-import { cn } from '@/lib/utils';
+import { useState } from "react";
+import Image, { ImageProps as NextImageProps } from "next/image";
+import { cn } from "@/lib/utils";
 
-interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+interface FallbackImageProps extends Omit<NextImageProps, "src"> {
+  src: string;
   fallbackSrc?: string;
-  fill?: boolean;
 }
 
-export function FallbackImage({ 
-  src, 
-  alt = "", 
+export function FallbackImage({
+  src,
+  alt = "",
   className,
   fallbackSrc = "https://source.unsplash.com/random/800x600?technology",
   fill,
-  ...props 
-}: ImageProps) {
-  const [error, setError] = useState(false);
+  ...props
+}: FallbackImageProps) {
+  const [imageSrc, setImageSrc] = useState(src);
 
   return (
-    <img
-      src={error ? fallbackSrc : src}
+    <Image
+      src={imageSrc}
       alt={alt}
-      onError={() => setError(true)}
+      onError={() => setImageSrc(fallbackSrc)}
       className={cn(
         "transition-all duration-200",
         fill && "absolute inset-0 h-full w-full",
         className
       )}
+      fill={fill}
       {...props}
     />
   );
