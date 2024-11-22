@@ -1,4 +1,5 @@
 import Parser from 'rss-parser';
+import sanitizeHtml from 'sanitize-html';
 
 type MediumPost = {
   title: string;
@@ -29,9 +30,10 @@ export async function getMediumPosts(limit = 10, page = 1): Promise<MediumFeed> 
       title: item.title,
       link: item.link,
       pubDate: item.pubDate,
-      contentSnippet: item.description
-        .replace(/<[^>]*>/g, '') // Remove HTML tags
-        .slice(0, 160) + '...',
+      contentSnippet: sanitizeHtml(item.description, {
+        allowedTags: [], // Remove all HTML tags
+        allowedAttributes: {} // Remove all attributes
+      }).slice(0, 160) + '...',
       thumbnail: item.thumbnail || extractImageFromContent(item.content),
     }));
 
