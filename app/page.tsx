@@ -2,10 +2,8 @@ import { MediumPosts } from '@/components/medium-posts';
 import { FeaturedProjects } from '@/components/featured-projects';
 import { getMediumPosts } from '@/lib/medium';
 
-export const revalidate = 3600; // Revalidate every hour
-
 export default async function Home() {
-  const { posts: mediumPosts } = await getMediumPosts(3); // Get latest 3 posts
+  const { posts: mediumPosts } = await getMediumPosts(4);
 
   return (
     <div className="space-y-16">

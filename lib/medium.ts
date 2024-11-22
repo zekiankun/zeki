@@ -1,23 +1,11 @@
-import Parser from 'rss-parser';
+import { MediumFeed } from '@/types/medium-feed';
 import sanitizeHtml from 'sanitize-html';
-
-type MediumPost = {
-  title: string;
-  link: string;
-  pubDate: string;
-  contentSnippet: string;
-  thumbnail: string;
-};
-
-type MediumFeed = {
-  posts: MediumPost[];
-  total: number;
-};
+import he from 'he';
 
 export async function getMediumPosts(limit = 10, page = 1): Promise<MediumFeed> {
   try {
     const response = await fetch(
-      'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@osman-koc'
+      'https://api.rss2json.com/v1/api.json?rss_url=https://osman-koc.medium.com/feed'
     );
     
     const data = await response.json();
@@ -27,16 +15,17 @@ export async function getMediumPosts(limit = 10, page = 1): Promise<MediumFeed> 
     }
 
     const allPosts = data.items.map((item: any) => ({
-      title: item.title,
+      title: he.decode(item.title),
       link: item.link,
       pubDate: item.pubDate,
       contentSnippet: sanitizeHtml(item.description, {
-        allowedTags: [], // Remove all HTML tags
-        allowedAttributes: {} // Remove all attributes
+        allowedTags: [], 
+        allowedAttributes: {} 
       }).slice(0, 160) + '...',
       thumbnail: item.thumbnail || extractImageFromContent(item.content),
     }));
 
+    // TODO : Add pagination from Medium API
     const startIndex = (page - 1) * limit;
     const endIndex = startIndex + limit;
 
