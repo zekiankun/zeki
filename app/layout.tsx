@@ -6,6 +6,7 @@ import { Sidebar } from '@/components/sidebar';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Suspense } from 'react';
 import { LoadingProvider } from '@/components/loading-provider';
+import { sharedMetadata } from '@/app/shared-metadata';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -18,8 +19,43 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Osman KOÇ - Software Engineer | Blog & Portfolio',
-  description: 'Profesyonel olarak web tabanlı kurumsal uygulamalar geliştirip, kişisel olarak da web ve mobilde uygulamalar, projeler geliştirmeye çalışıyorum. Google Play Store ve AppStore üzerinden yayında olan uygulamaları kullanabilirsiniz.',
+  metadataBase: new URL(sharedMetadata.openGraph.url),
+  robots: {
+    index: true,
+    follow: true
+  },
+  title: {
+    default: sharedMetadata.title,
+    template: `%s — ${sharedMetadata.title}`
+  },
+  description: sharedMetadata.description,
+  keywords: ['Osman Koç', 'Osman Koc', 'osmkoc', 'kocosman', 'koc osman', 'developer', 'kocosm'],
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/favicon.png',
+  },
+  openGraph: {
+    title: {
+      default: sharedMetadata.title,
+      template: `%s — ${sharedMetadata.title}`
+    },
+    description: sharedMetadata.description,
+    type: 'website',
+    url: sharedMetadata.openGraph.url,
+    siteName: sharedMetadata.title,
+    locale: 'en_IE'
+  },
+  alternates: {
+    canonical: '/'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@osmkoc',
+    creator: '@osmkoc',
+  },
+  other: {
+    pinterest: 'nopin'
+  }
 };
 
 export default function RootLayout({

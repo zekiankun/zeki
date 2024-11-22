@@ -1,5 +1,10 @@
 {
   "name": "my-web-site",
+  "description": "My personel website",
+  "author": {
+    "name": "Osman Koç",
+    "url": "https://kocosman.com.tr"
+  },
   "version": "0.1.0",
   "private": true,
   "engines": {

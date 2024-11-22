@@ -2,7 +2,7 @@
 
 My personal website built with Next.js and Tailwind CSS. Uses Medium as a headless CMS for blog posts and Raindrop.io for managing bookmarks.
 
-<img src="public/screenshot.jpg" width="500" />
+<img src="public/og-image.jpg" width="500" style="border-radius: 12px; border: 1px solid #e5e7eb" />
 
 ## Features
 
