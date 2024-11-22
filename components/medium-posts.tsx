@@ -1,11 +1,5 @@
 import { formatDistance } from "date-fns";
-
-type MediumPost = {
-  title: string;
-  link: string;
-  pubDate: string;
-  contentSnippet: string;
-};
+import { type MediumPost } from "@/types/medium-post";
 
 export function MediumPosts({ 
   posts,

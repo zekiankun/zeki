@@ -22,14 +22,14 @@ function PlayStoreIcon() {
 function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="group flex rounded-lg border bg-card overflow-hidden transition-colors hover:border-primary">
-      <div className="relative w-1/4 bg-muted aspect-square">
+      {/* <div className="relative w-1/4 bg-muted aspect-square">
         <FallbackImage
           src={project.image}
           alt={project.title}
           fill
           className="object-cover transition-transform group-hover:scale-105"
         />
-      </div>
+      </div> */}
 
       <div className="flex-1 p-6 space-y-4">
         <h3 className="font-medium group-hover:text-primary transition-colors">
