@@ -29,7 +29,7 @@ export const getCollections = cache(async (): Promise<Collection[]> => {
       headers: {
         Authorization: `Bearer ${RAINDROP_TOKEN}`,
       },
-      next: { revalidate: 3600 } // Cache for 1 hour
+      //next: { revalidate: 3600 } // Cache for 1 hour
     });
 
     if (!res.ok) {
@@ -63,7 +63,7 @@ export const getBookmarksByCollection = cache(async (collectionId: number): Prom
         headers: {
           Authorization: `Bearer ${RAINDROP_TOKEN}`,
         },
-        next: { revalidate: 3600 } // Cache for 1 hour
+        //next: { revalidate: 3600 } // Cache for 1 hour
       }
     );
 

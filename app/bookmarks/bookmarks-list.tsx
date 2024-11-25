@@ -4,21 +4,9 @@ import { useState } from "react";
 import { ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { FallbackImage } from "@/components/ui/fallback-image";
+import { Collection } from "@/types/collection";
+import { Bookmark } from '@/types/bookmark';
 import useSWR from "swr";
-
-type Collection = {
-  _id: number;
-  title: string;
-  count: number;
-};
-
-type Bookmark = {
-  _id: string;
-  title: string;
-  excerpt: string;
-  link: string;
-  cover: string;
-};
 
 const DEFAULT_COLLECTION_ID = 41449893;
 
