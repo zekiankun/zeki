@@ -1,13 +1,8 @@
 import { cache } from 'react';
+import { Collection } from '@/types/collection';
 
 const RAINDROP_TOKEN = process.env.NEXT_PUBLIC_RAINDROP_ACCESS_TOKEN;
 const RAINDROP_API = 'https://api.raindrop.io/rest/v1';
-
-type Collection = {
-  _id: number;
-  title: string;
-  count: number;
-};
 
 type Bookmark = {
   _id: string;
@@ -29,7 +24,7 @@ export const getCollections = cache(async (): Promise<Collection[]> => {
       headers: {
         Authorization: `Bearer ${RAINDROP_TOKEN}`,
       },
-      //next: { revalidate: 3600 } // Cache for 1 hour
+      next: { revalidate: 3600 } // Cache for 1 hour
     });
 
     if (!res.ok) {
@@ -63,7 +58,7 @@ export const getBookmarksByCollection = cache(async (collectionId: number): Prom
         headers: {
           Authorization: `Bearer ${RAINDROP_TOKEN}`,
         },
-        //next: { revalidate: 3600 } // Cache for 1 hour
+        next: { revalidate: 3600 } // Cache for 1 hour
       }
     );
 

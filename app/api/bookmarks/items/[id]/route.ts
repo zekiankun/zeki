@@ -1,8 +1,6 @@
 import { getBookmarksByCollection } from '@/lib/raindrop';
 import { NextResponse } from 'next/server';
 
-export const revalidate = 3600; // Revalidate every hour
-
 export async function GET(
   request: Request,
   { params }: { params: { id: string } }

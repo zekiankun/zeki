@@ -5,7 +5,7 @@ import { ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { FallbackImage } from "@/components/ui/fallback-image";
 import { Collection } from "@/types/collection";
-import { Bookmark } from '@/types/bookmark';
+import { Bookmark } from "@/types/bookmark";
 import useSWR from "swr";
 
 const DEFAULT_COLLECTION_ID = 41449893;
