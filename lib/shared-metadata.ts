@@ -1,18 +1,23 @@
+const _title = 'Osman KOÇ - Software Engineer | Portfolio & Blog';
+const _description = 'I develop web-based applications professionally. I also develop mobile applications and open source software for hobby purposes. You can review what is published on GitHub, Google Play Store and AppStore.';
+const _keywords = ['Osman KOÇ', 'Osman Koc', 'osmankoc', 'osmkoc', 'kocosman', 'koc osman', 'dev', 'developer', 'kocosm', 'blog', 'medium'];
+const _url = 'https://osmankoc.dev';
+
 export const sharedMetadata = {
-    title: 'Osman Koç - Software Engineer | Portfolio & Blog',
-    description: 'I develop web-based corporate applications professionally and I also work on developing web and mobile applications and projects personally. You can use the applications published on Google Play Store and AppStore.',
-    keywords: ['Osman Koç', 'Osman Koc', 'osmkoc', 'kocosman', 'koc osman', 'developer', 'kocosm', 'blog', 'personal website'],
+    title: _title,
+    description: _description,
+    keywords: _keywords,
     openGraph: {
-      title: 'Osman Koç',
-      description: 'Software Engineer, and writer, based in Turkey',
-      url: 'https://kocosman.com.tr',
-      siteName: 'Osman Koç - Software Engineer | Portfolio & Blog',
+      title: _title,
+      description: _description,
+      url: _url,
+      siteName: _title,
       images: [
         {
           url: '/og-image.png',
           width: 1200,
           height: 630,
-          alt: 'Osman Koç - Software Engineer | Portfolio & Blog',
+          alt: _title,
           type: 'image/png',
         },
       ],
@@ -21,8 +26,8 @@ export const sharedMetadata = {
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Osman Koç',
-      description: 'Software Engineer, and writer, based in Turkey',
+      title: _title,
+      description: _description,
       images: ['/og-image.png'],
     },
   };

@@ -3,9 +3,9 @@ import { type Project } from "@/types/project";
 export const projects: Project[] = [
   {
     title: "Personal Website",
-    description: "kocosman.com.tr - Built with Next.js, TypeScript, and Tailwind CSS",
+    description: "osmankoc.dev - Built with Next.js, TypeScript, and Tailwind CSS",
     image: "https://osmkoc.com/wp-content/uploads/2024/11/osmkoc_newss.jpg",
-    demoUrl: "https://kocosman.com.tr",
+    demoUrl: "https://osmankoc.dev",
     sourceUrl: "https://github.com/osman-koc/my-web-site"
   },
   {
