@@ -9,6 +9,7 @@ import { LoadingProvider } from '@/components/loading-provider';
 import { sharedMetadata } from '@/lib/shared-metadata';
 import { OkAsciiArt } from '@/components/ok-ascii-art';
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -78,11 +79,12 @@ export default function RootLayout({
                   <ThemeToggle />
                 </div>
                 <main>{children}</main>
-                <Analytics />
               </div>
             </div>
           </div>
         </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
