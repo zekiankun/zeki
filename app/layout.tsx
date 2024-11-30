@@ -78,6 +78,7 @@ export default function RootLayout({
                   <ThemeToggle />
                 </div>
                 <main>{children}</main>
+                <Analytics />
               </div>
             </div>
           </div>
