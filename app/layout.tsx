@@ -8,6 +8,7 @@ import { Suspense } from 'react';
 import { LoadingProvider } from '@/components/loading-provider';
 import { sharedMetadata } from '@/lib/shared-metadata';
 import { OkAsciiArt } from '@/components/ok-ascii-art';
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({
   subsets: ['latin'],
