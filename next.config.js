@@ -10,7 +10,8 @@ const nextConfig = {
     ],
   },
   env: {
-    NEXT_PUBLIC_RAINDROP_ACCESS_TOKEN: process.env.RAINDROP_ACCESS_TOKEN,
+    RAINDROP_ACCESS_TOKEN: process.env.RAINDROP_ACCESS_TOKEN,
+    PLAYAI_API_KEY: process.env.PLAYAI_API_KEY
   },
 };
 

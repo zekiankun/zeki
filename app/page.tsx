@@ -1,6 +1,7 @@
 import { MediumPosts } from '@/components/medium-posts';
 import { FeaturedProjects } from '@/components/featured-projects';
 import { getMediumPosts } from '@/lib/medium';
+import PlayAIEmbed from '@/components/playai-embed';
 
 export default async function Home() {
   const { posts: mediumPosts } = await getMediumPosts(4);
@@ -15,6 +16,7 @@ export default async function Home() {
           A software engineer based in Turkey, focused on building scalable applications
           and writing about web development, technology, and software engineering practices.
         </p>
+        <PlayAIEmbed />
       </section>
 
       <section className="space-y-6">

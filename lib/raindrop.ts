@@ -1,7 +1,7 @@
 import { cache } from 'react';
 import { Collection } from '@/types/collection';
 
-const RAINDROP_TOKEN = process.env.NEXT_PUBLIC_RAINDROP_ACCESS_TOKEN;
+const RAINDROP_TOKEN = process.env.RAINDROP_ACCESS_TOKEN;
 const RAINDROP_API = 'https://api.raindrop.io/rest/v1';
 
 type Bookmark = {

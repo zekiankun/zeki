@@ -15,6 +15,7 @@ My personal website built with Next.js and Tailwind CSS. Uses Medium as a headle
 - 🔖 Raindrop.io integration for bookmarks
 - 🖼️ Gravatar for profile image
 - 🎯 Perfect Lighthouse score
+- 🤖 Play.AI for voice agent
 
 ## Tech Stack
 
@@ -42,6 +43,9 @@ npm install
 # Raindrop.io API Token (Required for bookmarks)
 # Get your token from: https://app.raindrop.io/settings/integrations
 RAINDROP_ACCESS_TOKEN=your_token_here
+# play.ai voice agent
+# Create your special agent from: https://play.ai/
+PLAYAI_API_KEY=your_key
 ```
 
 4. Start the development server:
