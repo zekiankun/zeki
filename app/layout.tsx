@@ -43,8 +43,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@osmkoc',
-    creator: '@osmkoc',
+    site: `@${sharedMetadata.social.x}`,
+    creator: `@${sharedMetadata.social.x}`,
   },
   other: {
     pinterest: 'nopin'

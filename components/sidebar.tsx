@@ -20,6 +20,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { useState } from "react";
+import { sharedMetadata } from "@/lib/shared-metadata";
 
 type SocialLink = {
   href: string;
@@ -40,25 +41,25 @@ const mainLinks = [
 
 const socialLinks: SocialLink[] = [
   { 
-    href: "https://github.com/osman-koc", 
+    href: `https://github.com/${sharedMetadata.social.github}`, 
     icon: Github, 
     label: "GitHub",
     className: "h-5 w-5" 
   },
   { 
-    href: "https://twitter.com/osmkoc", 
+    href: `https://x.com/${sharedMetadata.social.x}`, 
     icon: Twitter, 
-    label: "Twitter",
+    label: "Twitter (X)",
     className: "h-5 w-5"
   },
   { 
-    href: "https://linkedin.com/in/osman-koc", 
+    href: `https://linkedin.com/in/${sharedMetadata.social.linkedin}`, 
     icon: Linkedin, 
     label: "LinkedIn",
     className: "h-5 w-5"
   },
   { 
-    href: "https://osman-koc.medium.com", 
+    href: `https://medium.com/@${sharedMetadata.social.medium}`, 
     icon: () => (
       <svg
         viewBox="0 0 24 24"
@@ -76,7 +77,6 @@ const socialLinks: SocialLink[] = [
 export function Sidebar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const gravatarUrl = "https://gravatar.com/avatar/8cdcd03a8317d08a507265de2fef0c73?s=96&d=mp";
 
   return (
     <>
@@ -101,7 +101,7 @@ export function Sidebar() {
             <Link href="/" className="block" onClick={() => setIsOpen(false)}>
               <div className="space-y-3">
                 <Image
-                  src={gravatarUrl}
+                  src={sharedMetadata.urls.gravatarImg}
                   alt="Osman Koç"
                   width={48}
                   height={48}
