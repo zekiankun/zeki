@@ -10,6 +10,7 @@ import { sharedMetadata } from '@/lib/shared-metadata';
 import { OkAsciiArt } from '@/components/ok-ascii-art';
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import PlayAIEmbed from '@/components/playai-embed';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -85,6 +86,7 @@ export default function RootLayout({
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />
+        <PlayAIEmbed />
       </body>
     </html>
   );
