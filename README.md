@@ -59,8 +59,11 @@ To customize this website for your own use, you'll need to modify the following:
 
 1. Update personal information in:
    - `app/page.tsx` (introduction)
-   - `app/lib/shared-metadata.tsx` (metadata)
    - `components/sidebar.tsx` (name, social links)
+   - `app/lib/shared-metadata.ts` (metadata)
+   - `app/lib/page-metadata.ts` (metadata)
+   - `app/lib/journeys.ts` (journey list)
+   - `app/lib/projects.ts` (project list)
 
 2. Update Medium RSS feed URL in `lib/medium.ts` to your Medium profile
 

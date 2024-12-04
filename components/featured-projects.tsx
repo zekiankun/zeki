@@ -1,6 +1,6 @@
 import { ExternalLink, Github } from "lucide-react";
 import { FallbackImage } from "@/components/ui/fallback-image";
-import { projects } from "@/lib/projects";
+import { ProjectList } from "@/lib/projects";
 import { type Project } from "@/types/project";
 
 function AppStoreIcon() {
@@ -85,7 +85,7 @@ function ProjectCard({ project }: { project: Project }) {
 
 
 export function FeaturedProjects({ limit = 4 }: { limit?: number }) {
-  const featuredProjects = projects.slice(0, limit);
+  const featuredProjects = ProjectList.slice(0, limit);
 
   return (
     <div className="grid gap-6 sm:grid-cols-1 lg:grid-cols-2">

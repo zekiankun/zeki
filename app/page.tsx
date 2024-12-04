@@ -1,6 +1,9 @@
 import { MediumPosts } from '@/components/medium-posts';
 import { FeaturedProjects } from '@/components/featured-projects';
 import { getMediumPosts } from '@/lib/medium';
+import { GetMetada } from '@/lib/page-metadata';
+
+export const metadata = GetMetada('home');
 
 export default async function Home() {
   const { posts: mediumPosts } = await getMediumPosts(4);
@@ -12,7 +15,7 @@ export default async function Home() {
           Hi, I'm Osman 👋
         </h1>
         <p className="text-lg text-muted-foreground leading-relaxed">
-          A software engineer based in Turkey, focused on building scalable applications
+          A software engineer based in Türkiye, focused on building scalable applications
           and writing about web development, technology, and software engineering practices.
         </p>
       </section>

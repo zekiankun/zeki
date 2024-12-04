@@ -1,6 +1,9 @@
 import { Laptop, Monitor, Headphones } from "lucide-react";
 import { FallbackImage } from "@/components/ui/fallback-image";
 import { setup } from "@/lib/workspace";
+import { GetMetada } from '@/lib/page-metadata';
+
+export const metadata = GetMetada('workspace');
 
 const icons = {
   Hardware: Laptop,

@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
@@ -6,11 +5,13 @@ import { Sidebar } from '@/components/sidebar';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Suspense } from 'react';
 import { LoadingProvider } from '@/components/loading-provider';
-import { sharedMetadata } from '@/lib/shared-metadata';
 import { OkAsciiArt } from '@/components/ok-ascii-art';
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import PlayAIEmbed from '@/components/playai-embed';
+import { GetMetada } from '@/lib/page-metadata';
+
+export const metadata = GetMetada('default');
 
 const inter = Inter({
   subsets: ['latin'],
@@ -21,36 +22,6 @@ const jetBrainsMono = JetBrains_Mono({
   subsets: ['latin'],
   variable: '--font-jetbrains',
 });
-
-export const metadata: Metadata = {
-  metadataBase: new URL(sharedMetadata.openGraph.url),
-  robots: {
-    index: true,
-    follow: true
-  },
-  title: {
-    default: sharedMetadata.title,
-    template: `%s — ${sharedMetadata.title}`
-  },
-  description: sharedMetadata.description,
-  keywords: sharedMetadata.keywords,
-  icons: {
-    icon: '/favicon.ico',
-    apple: '/favicon.png',
-  },
-  openGraph: sharedMetadata.openGraph,
-  alternates: {
-    canonical: '/'
-  },
-  twitter: {
-    card: 'summary_large_image',
-    site: `@${sharedMetadata.social.x}`,
-    creator: `@${sharedMetadata.social.x}`,
-  },
-  other: {
-    pinterest: 'nopin'
-  }
-};
 
 export default function RootLayout({
   children,

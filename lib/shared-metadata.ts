@@ -1,4 +1,5 @@
 const _title = 'Osman KOÇ - Software Engineer | Portfolio & Blog';
+const _titleShort = 'Osman KOÇ';
 const _description = 'I develop web-based applications professionally. I also develop mobile applications and open source software for hobby purposes. You can review what is published on GitHub, Google Play Store and AppStore.';
 const _keywords = ['Osman KOÇ', 'Osman Koc', 'osmankoc', 'osmkoc', 'kocosman', 'koc osman', 'dev', 'developer', 'kocosm', 'blog', 'medium'];
 const _email = 'me@kocosman.com.tr';
@@ -20,32 +21,38 @@ const _urls = {
 
 export const sharedMetadata = {
   title: _title,
+  titleShort: _titleShort,
   description: _description,
   keywords: _keywords,
   email: _email,
   urls: _urls,
   social: _socialAccounts,
-  openGraph: {
-    title: _title,
-    description: _description,
-    url: _urls.website,
-    siteName: _title,
-    images: [
-      {
-        url: _ogImgPath,
-        width: 1200,
-        height: 630,
-        alt: _title,
-        type: 'image/png',
-      },
-    ],
-    locale: 'en_US',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: _title,
-    description: _description,
-    images: [_ogImgPath],
-  },
+  ogImage: {
+    width: 1200,
+    height: 630,
+    type: 'image/png'
+  }
+  // openGraph: {
+  //   title: _title,
+  //   description: _description,
+  //   url: _urls.website,
+  //   siteName: _title,
+  //   images: [
+  //     {
+  //       url: _ogImgPath,
+  //       width: 1200,
+  //       height: 630,
+  //       alt: _title,
+  //       type: 'image/png',
+  //     },
+  //   ],
+  //   locale: 'en_US',
+  //   type: 'website',
+  // },
+  // twitter: {
+  //   card: 'summary_large_image',
+  //   title: _title,
+  //   description: _description,
+  //   images: [_ogImgPath],
+  // },
 };

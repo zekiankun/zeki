@@ -23,7 +23,7 @@ export function ProfileHeader() {
       </div>
       
       <p className="text-lg leading-relaxed">
-        Hi 👋 I'm Osman, a software engineer and writer based in Turkey. I write about web development,
+        Hi 👋 I'm Osman, a software engineer and writer based in Türkiye. I write about web development,
         technology, and my experiences in the software industry.
       </p>
     </section>

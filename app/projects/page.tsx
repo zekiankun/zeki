@@ -1,5 +1,8 @@
-import { projects } from "@/lib/projects";
+import { ProjectList } from "@/lib/projects";
 import { ProjectCard } from "@/components/project-card";
+import { GetMetada } from '@/lib/page-metadata';
+
+export const metadata = GetMetada('projects');
 
 export default function ProjectsPage() {
   return (
@@ -12,7 +15,7 @@ export default function ProjectsPage() {
       </div>
 
       <div className="grid gap-6 sm:grid-cols-1 lg:grid-cols-2">
-        {projects.map((project) => (
+        {ProjectList.map((project) => (
           <ProjectCard key={project.title} project={project} />
         ))}
       </div>

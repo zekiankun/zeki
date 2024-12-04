@@ -1,4 +1,7 @@
 import { Code2, Brush, CheckCircle, Brain } from "lucide-react";
+import { GetMetada } from '@/lib/page-metadata';
+
+export const metadata = GetMetada('tools');
 
 const tools = [
   {
