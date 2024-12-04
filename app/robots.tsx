@@ -1,5 +1,6 @@
+import { sharedMetadata } from '@/lib/shared-metadata'
 import type { MetadataRoute } from 'next'
- 
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
@@ -7,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/private/', '/docs/', '/docs/app-policy/'],
     },
-    sitemap: 'https://acme.com/sitemap.xml',
+    sitemap: `${sharedMetadata.urls.website}/sitemap.xml`,
   }
 }
