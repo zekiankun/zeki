@@ -6,7 +6,6 @@ const PlayAIEmbed: React.FC = () => {
   useEffect(() => {
     const apiKey = process.env.PLAYAI_API_KEY;
     if (!apiKey) {
-      console.error("API key is missing in the environment variables!");
       return;
     }
 
