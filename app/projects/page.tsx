@@ -1,4 +1,4 @@
-import { ProjectList } from "@/lib/projects";
+import { ProjectList } from "@/lib/projects-data";
 import { ProjectCard } from "@/components/project-card";
 import { GetMetada } from '@/lib/page-metadata';
 

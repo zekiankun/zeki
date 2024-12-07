@@ -1,5 +1,5 @@
 import { ImageDialog } from '@/components/ui/image-dialog';
-import { JourneyList } from '@/lib/journeys';
+import { JourneyList } from '@/lib/journeys-data';
 import { GetMetada } from '@/lib/page-metadata';
 
 export const metadata = GetMetada('journey');

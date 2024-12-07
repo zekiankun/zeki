@@ -4,4 +4,6 @@ export type Bookmark = {
     excerpt: string;
     link: string;
     cover: string;
+    tags?: string[];
+    created?: string;
 };

@@ -1,15 +1,8 @@
-import { Laptop, Monitor, Headphones } from "lucide-react";
 import { FallbackImage } from "@/components/ui/fallback-image";
-import { setup } from "@/lib/workspace";
+import { WorkspaceIcons, WorkspaceData } from "@/lib/workspace-data";
 import { GetMetada } from '@/lib/page-metadata';
 
 export const metadata = GetMetada('workspace');
-
-const icons = {
-  Hardware: Laptop,
-  Software: Monitor,
-  Audio: Headphones,
-};
 
 export default function WorkspacePage() {
   return (
@@ -22,8 +15,8 @@ export default function WorkspacePage() {
       </div>
 
       <div className="space-y-16">
-        {setup.map(({ category, items }) => {
-          const Icon = icons[category as keyof typeof icons];
+        {WorkspaceData.map(({ category, items }) => {
+          const Icon = WorkspaceIcons[category as keyof typeof WorkspaceIcons];
           return (
             <section key={category} className="space-y-8">
               <div className="flex items-center gap-3">

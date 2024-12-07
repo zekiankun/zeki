@@ -1,5 +1,5 @@
 import { GetMetada } from '@/lib/page-metadata';
-import { ToolsData } from '@/lib/tools';
+import { ToolsData } from '@/lib/tools-data';
 
 export const metadata = GetMetada('tools');
 

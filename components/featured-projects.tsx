@@ -1,6 +1,6 @@
 import { ExternalLink, Github } from "lucide-react";
 import { FallbackImage } from "@/components/ui/fallback-image";
-import { ProjectList } from "@/lib/projects";
+import { ProjectList } from "@/lib/projects-data";
 import { type Project } from "@/types/project";
 
 function AppStoreIcon() {
