@@ -33,12 +33,12 @@ export const PageMetadataList: Record<string, PageMetadata> = {
             height: 630,
         }
     },
-    journey: {
-        route: "/journey",
-        title: "Journey",
+    highlights: {
+        route: "/highlights",
+        title: "Highlights",
         description: "Important points of my career and life, a kind of timeline.",
         image: {
-            url: '/api/og?page=journey',
+            url: '/api/og?page=highlights',
             width: 1200,
             height: 630,
         }

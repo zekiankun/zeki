@@ -1,9 +1,9 @@
-export type Journey = {
+export type Highlight = {
     year: string;
-    events: JourneyItem[];
+    events: HighlightItem[];
 };
 
-export type JourneyItem = {
+export type HighlightItem = {
     title: string;
     description?: string;
     imageUrl?: string;

@@ -1,21 +1,21 @@
 import { ImageDialog } from '@/components/ui/image-dialog';
-import { JourneyList } from '@/lib/journeys-data';
+import { HighlightList } from '@/lib/highlights-data';
 import { GetMetada } from '@/lib/page-metadata';
 
-export const metadata = GetMetada('journey');
+export const metadata = GetMetada('highlights');
 
-export default function JourneyPage() {
+export default function HighlightPage() {
   return (
     <div className="max-w-4xl space-y-12">
       <div className="space-y-2">
-        <h1 className="text-3xl font-bold">Journey</h1>
+        <h1 className="text-3xl font-bold">Highlights</h1>
         <p className="text-muted-foreground">
           Important points of my career and life, a kind of timeline.
         </p>
       </div>
 
       <div className="space-y-16">
-        {JourneyList.map((item) => (
+        {HighlightList.map((item) => (
           <div key={item.year} className="relative grid grid-cols-[100px_1fr] gap-8">
             <div className="text-xl font-medium sticky top-20">
               {item.year}

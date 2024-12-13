@@ -62,8 +62,10 @@ To customize this website for your own use, you'll need to modify the following:
    - `components/sidebar.tsx` (name, social links)
    - `app/lib/shared-metadata.ts` (metadata)
    - `app/lib/page-metadata.ts` (metadata)
-   - `app/lib/journeys.ts` (journey list)
-   - `app/lib/projects.ts` (project list)
+   - `app/lib/highlights-data.ts` (highlight list)
+   - `app/lib/workspace-data.ts` (workspace list)
+   - `app/lib/projects-data.ts` (project list)
+   - `app/lib/tools-data.ts` (tool list)
 
 2. Update Medium RSS feed URL in `lib/medium.ts` to your Medium profile
 
@@ -72,14 +74,6 @@ To customize this website for your own use, you'll need to modify the following:
    - Go to [Integrations](https://app.raindrop.io/settings/integrations)
    - Create a new app and generate a permanent token
    - Add the token to `.env.local`
-
-4. Modify the journey timeline in `app/journey/page.tsx`
-
-5. Update workspace items in `lib/workspace.ts`
-
-6. Update tools list in `app/tools/page.tsx`
-
-7. Update projects in `lib/projects.ts`
 
 ## Development
 

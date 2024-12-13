@@ -1,8 +1,8 @@
-import { type Journey } from "@/types/journey";
+import { type Highlight } from "@/types/highlight";
 
-const imageFolderPath = '/images/journeys';
+const imageFolderPath = '/images/highlights';
 
-export const JourneyList: Journey[] = [
+export const HighlightList: Highlight[] = [
     {
         year: "2024",
         events: [
