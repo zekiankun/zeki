@@ -14,9 +14,9 @@ export const WorkspaceData: WorkspaceItem[] = [
     category: "Hardware",
     items: [
       {
-        name: "Monster Abra A5 V9.2 15.6",
-        description: "Intel Core i7, Nvidia Geforce GTX, 16 GB RAM, 256 GB SSD, 1 TB HDD",
-        image: `${imagesPath}/abra-a5-v9.jpg`
+        name: "Apple Mac Mini 2024",
+        description: "M4 Pro, 12-Core CPU, 16-Core GPU, 24GB RAM, 512GB SSD",
+        image: `${imagesPath}/mac-mini-2024.jpg`
       },
       {
         name: "LG UltraWide Curved Monitor",
@@ -32,6 +32,11 @@ export const WorkspaceData: WorkspaceItem[] = [
         name: "Logitech Lift Mouse",
         description: "White, multiple devices, ergonomic",
         image: `${imagesPath}/logitech-lift-mouse.jpg`
+      },
+      {
+        name: "Apple Magic Tracpad",
+        description: "White, Multi-Touch Surface",
+        image: `${imagesPath}/magic-tracpad.jpg`
       },
     ]
   },
