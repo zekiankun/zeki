@@ -57,7 +57,7 @@ export default function RootLayout({
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />
-        <PlayAIEmbed />
+        {/* <PlayAIEmbed /> */}
       </body>
     </html>
   );
