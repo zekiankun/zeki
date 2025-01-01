@@ -32,34 +32,28 @@ type SocialLink = {
 const mainLinks = [
   { href: "/", icon: Home, label: "Home" },
   { href: "/blog", icon: PenTool, label: "Writing" },
-  { href: "/highlights", icon: Map, label: "Highlights" },
+  //{ href: "/highlights", icon: Map, label: "Highlights" },
   { href: "/projects", icon: Code2, label: "Projects" },
-  { href: "/tools", icon: Layers, label: "Tools" },
-  { href: "/workspace", icon: Briefcase, label: "Workspace" },
-  { href: "/bookmarks", icon: Bookmark, label: "Bookmarks" },
+  //{ href: "/tools", icon: Layers, label: "Tools" },
+  //{ href: "/workspace", icon: Briefcase, label: "Workspace" },
+  //{ href: "/bookmarks", icon: Bookmark, label: "Bookmarks" },
 ];
 
 const socialLinks: SocialLink[] = [
   { 
-    href: `https://github.com/${sharedMetadata.social.github}`, 
+    href: `https://github.com/zekiankun`, 
     icon: Github, 
     label: "GitHub",
     className: "h-5 w-5" 
   },
   { 
-    href: `https://x.com/${sharedMetadata.social.x}`, 
+    href: `https://x.com/zekiankun}`, 
     icon: Twitter, 
     label: "Twitter (X)",
     className: "h-5 w-5"
   },
-  { 
-    href: `https://linkedin.com/in/${sharedMetadata.social.linkedin}`, 
-    icon: Linkedin, 
-    label: "LinkedIn",
-    className: "h-5 w-5"
-  },
-  { 
-    href: `https://medium.com/@${sharedMetadata.social.medium}`, 
+    { 
+    href: `https://zekiankun.medium.com/`, 
     icon: () => (
       <svg
         viewBox="0 0 24 24"
