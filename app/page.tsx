@@ -12,7 +12,7 @@ export default async function Home() {
     <div className="space-y-16">
       <section className="space-y-4">
         <h1 className="text-2xl font-semibold tracking-tight">
-          Hi, I'm Osman 👋
+          Zeki ANKUN
         </h1>
         <p className="text-lg text-muted-foreground leading-relaxed">
           A software engineer based in Türkiye, focused on building scalable applications
