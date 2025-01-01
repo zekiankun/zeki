@@ -5,7 +5,7 @@ import he from 'he';
 export async function getMediumPosts(limit = 10, page = 1): Promise<MediumFeed> {
   try {
     const response = await fetch(
-      'https://api.rss2json.com/v1/api.json?rss_url=https://osman-koc.medium.com/feed'
+      'https://api.rss2json.com/v1/api.json?rss_url=https://zekiankun.medium.com/feed'
     );
     
     const data = await response.json();
